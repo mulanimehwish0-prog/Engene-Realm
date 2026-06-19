@@ -3,14 +3,14 @@
  *
  * HOW TO ADD REAL IMAGES
  * ──────────────────────
- * 1. Drop the image file into `src/assets/` (e.g. `src/assets/members/jungwon.jpg`)
- *    OR use an absolute URL (e.g. a CDN link).
+ * 1. Drop the image file into `src/assets/` (e.g. `src/assets/albums/dark-blood.jpg`)
+ *    OR use an absolute URL (CDN link).
  * 2. Find the matching entry below.
  * 3. Replace the `src` value:
- *      - Local file:  import jungwonImg from "@assets/members/jungwon.jpg"
- *                     then set  src: jungwonImg
- *      - Remote URL:  src: "https://example.com/jungwon.jpg"
- * 4. Delete the `placeholder: true` flag — the component will render the real image.
+ *      - Local file:  import img from "@assets/albums/dark-blood.jpg"
+ *                     then set  src: img
+ *      - Remote URL:  src: "https://example.com/dark-blood.jpg"
+ * 4. Set `placeholder: false` — the component will render the real image.
  *
  * All images are optional. When `src` is undefined or `placeholder` is true,
  * the component falls back to the styled gradient placeholder.
@@ -36,55 +36,13 @@ export interface MemberImage {
 }
 
 export const memberImages: Record<MemberId, MemberImage> = {
-  jungwon: {
-    id: "jungwon",
-    name: "Jungwon",
-    src: undefined,
-    alt: "Yang Jungwon — ENHYPEN leader",
-    placeholder: true,
-  },
-  heeseung: {
-    id: "heeseung",
-    name: "Heeseung",
-    src: undefined,
-    alt: "Lee Heeseung — ENHYPEN vocalist and dancer",
-    placeholder: true,
-  },
-  jay: {
-    id: "jay",
-    name: "Jay",
-    src: undefined,
-    alt: "Park Jongseong (Jay) — ENHYPEN rapper and vocalist",
-    placeholder: true,
-  },
-  jake: {
-    id: "jake",
-    name: "Jake",
-    src: undefined,
-    alt: "Sim Jaeyun (Jake) — ENHYPEN rapper and vocalist",
-    placeholder: true,
-  },
-  sunghoon: {
-    id: "sunghoon",
-    name: "Sunghoon",
-    src: undefined,
-    alt: "Park Sunghoon — ENHYPEN vocalist and visual",
-    placeholder: true,
-  },
-  sunoo: {
-    id: "sunoo",
-    name: "Sunoo",
-    src: undefined,
-    alt: "Kim Sunoo — ENHYPEN vocalist",
-    placeholder: true,
-  },
-  "ni-ki": {
-    id: "ni-ki",
-    name: "Ni-ki",
-    src: undefined,
-    alt: "Nishimura Riki (Ni-ki) — ENHYPEN main dancer",
-    placeholder: true,
-  },
+  jungwon:   { id: "jungwon",   name: "Jungwon",   src: undefined, alt: "Yang Jungwon — ENHYPEN leader",                          placeholder: true },
+  heeseung:  { id: "heeseung",  name: "Heeseung",  src: undefined, alt: "Lee Heeseung — ENHYPEN vocalist and dancer",             placeholder: true },
+  jay:       { id: "jay",       name: "Jay",       src: undefined, alt: "Park Jongseong (Jay) — ENHYPEN rapper and vocalist",     placeholder: true },
+  jake:      { id: "jake",      name: "Jake",      src: undefined, alt: "Sim Jaeyun (Jake) — ENHYPEN rapper and vocalist",       placeholder: true },
+  sunghoon:  { id: "sunghoon",  name: "Sunghoon",  src: undefined, alt: "Park Sunghoon — ENHYPEN vocalist and visual",           placeholder: true },
+  sunoo:     { id: "sunoo",     name: "Sunoo",     src: undefined, alt: "Kim Sunoo — ENHYPEN vocalist",                          placeholder: true },
+  "ni-ki":   { id: "ni-ki",    name: "Ni-ki",     src: undefined, alt: "Nishimura Riki (Ni-ki) — ENHYPEN main dancer",          placeholder: true },
 };
 
 // ─── Album / Era Images ───────────────────────────────────────────────────────
@@ -98,7 +56,10 @@ export type AlbumId =
   | "dark-blood"
   | "orange-blood"
   | "romance-untold"
-  | "sin-vanish";
+  | "romance-untold-daydream"
+  | "memorabilia"
+  | "desire-unleash"
+  | "sadame";
 
 export interface AlbumImage {
   id: AlbumId;
@@ -109,69 +70,18 @@ export interface AlbumImage {
 }
 
 export const albumImages: Record<AlbumId, AlbumImage> = {
-  "border-day-one": {
-    id: "border-day-one",
-    title: "BORDER: DAY ONE",
-    src: undefined,
-    alt: "ENHYPEN BORDER: DAY ONE album cover",
-    placeholder: true,
-  },
-  "border-carnival": {
-    id: "border-carnival",
-    title: "BORDER: CARNIVAL",
-    src: undefined,
-    alt: "ENHYPEN BORDER: CARNIVAL album cover",
-    placeholder: true,
-  },
-  "dimension-dilemma": {
-    id: "dimension-dilemma",
-    title: "DIMENSION: DILEMMA",
-    src: undefined,
-    alt: "ENHYPEN DIMENSION: DILEMMA album cover",
-    placeholder: true,
-  },
-  "dimension-answer": {
-    id: "dimension-answer",
-    title: "DIMENSION: ANSWER",
-    src: undefined,
-    alt: "ENHYPEN DIMENSION: ANSWER album cover",
-    placeholder: true,
-  },
-  "manifesto-day-1": {
-    id: "manifesto-day-1",
-    title: "MANIFESTO: DAY 1",
-    src: undefined,
-    alt: "ENHYPEN MANIFESTO: DAY 1 album cover",
-    placeholder: true,
-  },
-  "dark-blood": {
-    id: "dark-blood",
-    title: "DARK BLOOD",
-    src: undefined,
-    alt: "ENHYPEN DARK BLOOD album cover",
-    placeholder: true,
-  },
-  "orange-blood": {
-    id: "orange-blood",
-    title: "ORANGE BLOOD",
-    src: undefined,
-    alt: "ENHYPEN ORANGE BLOOD album cover",
-    placeholder: true,
-  },
-  "romance-untold": {
-    id: "romance-untold",
-    title: "ROMANCE : UNTOLD",
-    src: undefined,
-    alt: "ENHYPEN ROMANCE : UNTOLD album cover",
-    placeholder: true,
-  },
-  "sin-vanish": {
-    id: "sin-vanish",
-    title: "SIN : VANISH",
-    src: undefined,
-    alt: "ENHYPEN SIN : VANISH album cover",
-    placeholder: true,
-  },
+  "border-day-one":           { id: "border-day-one",           title: "BORDER : DAY ONE",              src: undefined, alt: "ENHYPEN BORDER : DAY ONE album cover",              placeholder: true },
+  "border-carnival":          { id: "border-carnival",          title: "BORDER : CARNIVAL",             src: undefined, alt: "ENHYPEN BORDER : CARNIVAL album cover",             placeholder: true },
+  "dimension-dilemma":        { id: "dimension-dilemma",        title: "DIMENSION : DILEMMA",           src: undefined, alt: "ENHYPEN DIMENSION : DILEMMA album cover",           placeholder: true },
+  "dimension-answer":         { id: "dimension-answer",         title: "DIMENSION : ANSWER",            src: undefined, alt: "ENHYPEN DIMENSION : ANSWER album cover",            placeholder: true },
+  "manifesto-day-1":          { id: "manifesto-day-1",          title: "MANIFESTO : DAY 1",             src: undefined, alt: "ENHYPEN MANIFESTO : DAY 1 album cover",             placeholder: true },
+  "dark-blood":               { id: "dark-blood",               title: "DARK BLOOD",                   src: undefined, alt: "ENHYPEN DARK BLOOD album cover",                   placeholder: true },
+  "orange-blood":             { id: "orange-blood",             title: "ORANGE BLOOD",                 src: undefined, alt: "ENHYPEN ORANGE BLOOD album cover",                 placeholder: true },
+  "romance-untold":           { id: "romance-untold",           title: "ROMANCE : UNTOLD",             src: undefined, alt: "ENHYPEN ROMANCE : UNTOLD album cover",             placeholder: true },
+  "romance-untold-daydream":  { id: "romance-untold-daydream",  title: "ROMANCE : UNTOLD -daydream-",  src: undefined, alt: "ENHYPEN ROMANCE : UNTOLD -daydream- album cover",  placeholder: true },
+  "memorabilia":              { id: "memorabilia",              title: "MEMORABILIA",                  src: undefined, alt: "ENHYPEN MEMORABILIA album cover",                  placeholder: true },
+  "desire-unleash":           { id: "desire-unleash",           title: "DESIRE : UNLEASH",             src: undefined, alt: "ENHYPEN DESIRE : UNLEASH album cover",             placeholder: true },
+  "sadame":                   { id: "sadame",                   title: "SADAME",                       src: undefined, alt: "ENHYPEN SADAME album cover",                       placeholder: true },
 };
 
 // ─── Helper utilities ─────────────────────────────────────────────────────────

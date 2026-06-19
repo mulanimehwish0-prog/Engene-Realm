@@ -9,56 +9,56 @@ const latestUpdates = [
   {
     id: 1,
     type: "Comeback",
+    date: "2024",
+    title: "ROMANCE : UNTOLD -daydream-",
+    description: "The repackage edition of their 2nd full album. ROMANCE : UNTOLD -daydream- expanded the romantic narrative with new tracks including No Doubt.",
+    icon: Music2,
+    borderColor: "border-l-pink-400",
+  },
+  {
+    id: 2,
+    type: "Release",
     date: "2025",
-    title: "SIN : VANISH Era Begins",
-    description: "ENHYPEN returns with their most cinematic era yet. A darker, more mature concept exploring the weight of sin and the act of vanishing.",
+    title: "MEMORABILIA",
+    description: "ENHYPEN's newest Korean-market mini album. MEMORABILIA marks another chapter in their ever-evolving artistic journey, with a fresh concept and signature storytelling.",
+    icon: Music2,
+    borderColor: "border-l-teal-500",
+  },
+  {
+    id: 3,
+    type: "Release",
+    date: "2025",
+    title: "DESIRE : UNLEASH",
+    description: "ENHYPEN returns with DESIRE : UNLEASH, their latest release. A bold new era exploring themes of longing and release, pushing their sonic identity further than ever.",
     icon: Music2,
     borderColor: "border-l-violet-500",
   },
   {
-    id: 2,
-    type: "World Tour",
-    date: "2026",
-    title: "ENHYPEN World Tour 2026",
-    description: "ENHYPEN announces their 2026 world tour spanning Asia, North America, and Europe. Tickets on sale now — Engenes, get ready.",
-    icon: Globe,
-    borderColor: "border-l-blue-500",
-  },
-  {
-    id: 3,
-    type: "Performance",
-    date: "Jan 2026",
-    title: "Golden Disc Awards 2026",
-    description: "ENHYPEN took home Daesang at the Golden Disc Awards, cementing their place as one of the defining acts of their generation.",
+    id: 4,
+    type: "Japanese Release",
+    date: "2025",
+    title: "SADAME",
+    description: "ENHYPEN's Japanese release SADAME — meaning 'fate' or 'destiny' — continues their strong presence in the Japanese market with a dedicated Japanese-language production.",
     icon: Sparkles,
     borderColor: "border-l-amber-500",
   },
   {
-    id: 4,
-    type: "Announcement",
-    date: "Feb 2026",
-    title: "5th Debut Anniversary Event",
-    description: "To celebrate five years since debut, BELIFT LAB announced a special fan meeting and exclusive merchandise drop for Engenes worldwide.",
-    icon: Megaphone,
-    borderColor: "border-l-rose-500",
-  },
-  {
     id: 5,
-    type: "Performance",
-    date: "Mar 2026",
-    title: "Coachella 2026 Stage",
-    description: "ENHYPEN made history performing at Coachella 2026, delivering a stunning set that trended worldwide and introduced them to a whole new audience.",
-    icon: Sparkles,
-    borderColor: "border-l-green-500",
+    type: "World Tour",
+    date: "2026",
+    title: "ENHYPEN World Tour 2026",
+    description: "ENHYPEN announces their 2026 world tour spanning Asia, North America, and Europe. Engenes around the world, get ready.",
+    icon: Globe,
+    borderColor: "border-l-blue-500",
   },
   {
     id: 6,
-    type: "Release",
-    date: "Apr 2026",
-    title: "Special Fan Song Release",
-    description: "A surprise gift to Engenes — a heartfelt self-composed fan song released ahead of the world tour, written by the members themselves.",
-    icon: Music2,
-    borderColor: "border-l-pink-500",
+    type: "Milestone",
+    date: "Nov 2025",
+    title: "5th Debut Anniversary",
+    description: "ENHYPEN celebrated five years since debut in November 2025. From I-Land trainees to world-touring artists — a journey Engenes have shared every step of the way.",
+    icon: Megaphone,
+    borderColor: "border-l-rose-500",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Home() {
 
       <div className="container mx-auto px-4 py-16 md:py-24">
 
-        {/* ── Hero ───────────────────────────────────────────── */}
+        {/* ── Hero ────────────────────────────────────────────────── */}
         <motion.div
           className="max-w-3xl mx-auto text-center space-y-6"
           initial={{ opacity: 0, y: 20 }}
@@ -94,8 +94,8 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-4 py-6">
             <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">7 Members</Badge>
             <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">Since 2020</Badge>
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">9 Eras</Badge>
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">Active 2026</Badge>
+            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">12 Releases</Badge>
+            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">Active 2025 – 2026</Badge>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -103,12 +103,12 @@ export default function Home() {
               Meet the Members
             </Link>
             <Link href="/albums" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground h-11 rounded-full px-8 shadow-sm hover:shadow-lg hover:-translate-y-0.5" data-testid="button-home-albums">
-              Explore Eras
+              Full Discography
             </Link>
           </div>
         </motion.div>
 
-        {/* ── Latest Updates ──────────────────────────────────── */}
+        {/* ── Latest Updates ───────────────────────────────────────── */}
         <motion.div
           className="mt-32 max-w-5xl mx-auto mb-20"
           initial={{ opacity: 0, y: 40 }}
@@ -118,8 +118,8 @@ export default function Home() {
         >
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-serif font-bold">Latest News</h2>
-              <p className="text-sm text-muted-foreground mt-1">2025 – 2026 updates</p>
+              <h2 className="text-3xl font-serif font-bold">Latest Updates</h2>
+              <p className="text-sm text-muted-foreground mt-1">2024 – 2026</p>
             </div>
             <Link href="/updates" className="text-sm font-medium text-primary flex items-center hover:underline transition-all" data-testid="link-updates-all">
               View all <ChevronRight className="w-4 h-4 ml-1" />
@@ -139,14 +139,14 @@ export default function Home() {
                 >
                   <Card className={`glass dark:glass-dark overflow-hidden border-l-4 ${update.borderColor} hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full`}>
                     <CardContent className="p-5">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="p-1.5 rounded-lg bg-primary/10">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="p-1.5 rounded-lg bg-primary/10 shrink-0">
                           <Icon className="w-3.5 h-3.5 text-primary" />
                         </div>
                         <Badge variant="secondary" className="bg-primary/10 text-primary border-transparent text-xs">
                           {update.type}
                         </Badge>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1 font-medium ml-auto">
+                        <span className="text-xs text-muted-foreground flex items-center gap-1 font-medium ml-auto shrink-0">
                           <CalendarDays className="w-3 h-3" />
                           {update.date}
                         </span>
@@ -161,7 +161,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* ── Featured Era ────────────────────────────────────── */}
+        {/* ── Featured Era ─────────────────────────────────────────── */}
         <motion.div
           className="mt-8 max-w-5xl mx-auto mb-24"
           initial={{ opacity: 0, y: 40 }}
@@ -170,44 +170,53 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-serif font-bold">Latest Era</h2>
+            <h2 className="text-3xl font-serif font-bold">Featured Era</h2>
             <Link href="/albums" className="text-sm font-medium text-primary flex items-center hover:underline transition-all" data-testid="link-featured-all">
               Full discography <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
 
-          <Card className="overflow-hidden border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-[#0d0d1a] via-[#1a0e2e] to-[#0a1628] text-white" style={{ boxShadow: "0 0 60px rgba(99,60,180,0.18)" }}>
+          <Card className="overflow-hidden border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-[#2a1b38] to-[#1a0f2e] text-white hover:[box-shadow:0_0_40px_rgba(220,38,38,0.2)]">
             <div className="grid md:grid-cols-2 gap-0 h-full">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <Badge className="w-fit bg-violet-900/50 text-violet-200 border-violet-700/40 mb-6 backdrop-blur-md">Latest Era · 2025</Badge>
-                <h3 className="text-4xl md:text-5xl font-serif font-bold mb-4 tracking-wider">SIN : VANISH</h3>
+                <Badge className="w-fit bg-red-900/40 text-red-200 border-red-800/50 mb-6 backdrop-blur-md">4th Mini Album · May 2023</Badge>
+                <h3 className="text-4xl md:text-5xl font-serif font-bold mb-4 tracking-wider">DARK BLOOD</h3>
                 <p className="text-white/70 text-base leading-relaxed mb-8">
-                  ENHYPEN's most cinematic era. A haunting exploration of sin, consequence, and the act of disappearing — blending gothic storytelling with their signature conceptual depth. Darker, bolder, and more theatrical than anything before.
+                  A dark romantic fantasy of sacrifice and fate. Bite Me was theatrical, vampiric, and impossible to look away from — a gothic storytelling era that marked a defining moment for the group.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
                     <span className="w-8 text-center text-white/50 text-sm font-mono">01</span>
-                    <span className="font-bold">SIN : VANISH</span>
-                    <Badge variant="outline" className="ml-auto border-violet-500/30 text-violet-200 bg-violet-950/30 text-[10px] tracking-widest">TITLE</Badge>
+                    <span className="font-medium">Fate</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
                     <span className="w-8 text-center text-white/50 text-sm font-mono">02</span>
-                    <span className="font-medium">Pray 4 U</span>
+                    <span className="font-bold">Bite Me</span>
+                    <Badge variant="outline" className="ml-auto border-red-500/30 text-red-200 bg-red-950/30 text-[10px] tracking-widest">TITLE</Badge>
                   </div>
                   <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
                     <span className="w-8 text-center text-white/50 text-sm font-mono">03</span>
-                    <span className="font-medium">Criminal Mind</span>
+                    <span className="font-medium">Sacrifice (Eat Me Up)</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <span className="w-8 text-center text-white/50 text-sm font-mono">04</span>
+                    <span className="font-medium">Chaconne</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <span className="w-8 text-center text-white/50 text-sm font-mono">05</span>
+                    <span className="font-medium">Bills</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-white/90 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                    <span className="w-8 text-center text-white/50 text-sm font-mono">06</span>
+                    <span className="font-medium">Karma</span>
                   </div>
                 </div>
               </div>
-              <div className="relative h-64 md:h-auto bg-gradient-to-br from-violet-900 via-indigo-950 to-slate-900 overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.05)_10px,rgba(255,255,255,0.05)_20px)]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent opacity-70" />
-                {/* Decorative glow orbs */}
-                <div className="absolute top-1/3 left-1/3 w-40 h-40 rounded-full bg-violet-600/20 blur-3xl" />
-                <div className="absolute bottom-1/4 right-1/4 w-32 h-32 rounded-full bg-indigo-500/15 blur-2xl" />
-                <h2 className="text-7xl md:text-8xl font-serif font-bold text-white/10 tracking-tighter rotate-[-8deg] scale-125 whitespace-nowrap select-none z-10">SIN</h2>
-                {/* <img src="sin-vanish-cover-url" alt="SIN : VANISH" className="w-full h-full object-cover absolute inset-0" /> */}
+              <div className="relative h-64 md:h-auto bg-gradient-to-br from-red-900 via-purple-900 to-slate-900 overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f2e] via-transparent to-transparent opacity-80" />
+                <h2 className="text-8xl md:text-9xl font-serif font-bold text-white/10 tracking-tighter rotate-[-10deg] scale-150 whitespace-nowrap select-none">DARK BLOOD</h2>
+                {/* Swap in album cover: <img src="…" alt="DARK BLOOD" className="w-full h-full object-cover absolute inset-0 mix-blend-overlay opacity-60" /> */}
               </div>
             </div>
           </Card>
