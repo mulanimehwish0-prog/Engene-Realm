@@ -86,8 +86,10 @@
   --app-font-serif: 'Playfair Display', serif;
   --app-font-mono: Menlo, monospace;
   
-  --radius: 1rem;
+  --radius: 1.25rem;
 }
+
+@keyframes shimmer { 0%,100% {opacity:0.4} 50% {opacity:1} }
 
 .dark {
   --button-outline: rgba(255,255,255, .10);
@@ -133,5 +135,24 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass { 
+    backdrop-filter: blur(16px); 
+    background: rgba(255,255,255,0.6); 
+    border: 1px solid rgba(255,255,255,0.3); 
+  }
+  .glass-dark { 
+    backdrop-filter: blur(16px); 
+    background: rgba(255,255,255,0.07); 
+    border: 1px solid rgba(255,255,255,0.12); 
+  }
+  .glow-primary { 
+    box-shadow: 0 0 24px rgba(100,100,240,0.25); 
+  }
+  .glow-hover:hover { 
+    box-shadow: 0 0 32px rgba(100,100,240,0.3); 
   }
 }

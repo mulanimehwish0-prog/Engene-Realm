@@ -93,6 +93,21 @@ const albums = [
       { name: "Blind" },
       { name: "Orange Flower (You Complete Me)", favorite: true }
     ]
+  },
+  {
+    title: "ROMANCE : UNTOLD",
+    date: "Jul 2024",
+    gradient: "from-rose-300 via-pink-200 to-orange-200",
+    textMode: "text-rose-950",
+    badgeMode: "bg-rose-700 text-white",
+    tracks: [
+      { name: "Brought the Boys Out", title: true },
+      { name: "XO (Only If You Say Yes)", favorite: true },
+      { name: "Moonstruck" },
+      { name: "Fatal Trouble" },
+      { name: "Serenade (I'll Be There)" },
+      { name: "Polaroid Love (Re-Edited)" }
+    ]
   }
 ];
 
@@ -108,7 +123,43 @@ export default function Albums() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Timeline Section */}
+      <div className="mb-20 max-w-6xl mx-auto">
+        <h2 className="text-sm uppercase tracking-widest font-bold text-muted-foreground text-center mb-8">
+          ENHYPEN Through the Eras
+        </h2>
+        <div className="relative">
+          {/* Horizontal Line */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
+          
+          <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-4">
+            {albums.map((album, index) => (
+              <motion.div 
+                key={album.title}
+                className="flex flex-col items-center justify-center min-w-[160px] snap-center relative z-10 group"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <div className="mb-4 text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                  {album.date.split(' ')[1]}
+                </div>
+                <div className={`w-4 h-4 rounded-full ${album.badgeMode.split(' ')[0]} ring-4 ring-background shadow-sm transition-transform duration-300 group-hover:scale-150`} />
+                <div className="mt-4 text-center">
+                  <div className="text-sm font-serif font-bold max-w-[120px] truncate px-2 group-hover:text-primary transition-colors">
+                    {album.title}
+                  </div>
+                  <div className="text-[10px] text-muted-foreground mt-1 uppercase tracking-wider">
+                    {album.date.split(' ')[0]}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto">
         {albums.map((album, index) => (
           <motion.div
             key={album.title}
@@ -116,30 +167,43 @@ export default function Albums() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className={`h-full overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br ${album.gradient} ${album.textMode}`}>
+            <Card className={`h-full overflow-hidden border-0 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-gradient-to-br ${album.gradient} ${album.textMode}`}>
+              {/* Era Image Placeholder */}
+              <div className={`relative h-40 w-full bg-gradient-to-br ${album.gradient} flex items-center justify-center overflow-hidden border-b border-white/10`}>
+                <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.2)_10px,rgba(255,255,255,0.2)_20px)]" />
+                <h3 className="text-5xl md:text-6xl font-serif font-bold text-white/40 tracking-widest text-center px-4 leading-none z-10 select-none">
+                  {album.title.split(':').map((part, i) => (
+                    <span key={i} className="block">{part}</span>
+                  ))}
+                </h3>
+                {/* // To add real album art: replace this div with <img src={album.coverImage} className='w-full h-full object-cover' /> */}
+              </div>
+
               <CardContent className="p-6 md:p-8">
-                <div className="mb-6">
-                  <Badge variant="outline" className={`mb-3 ${album.badgeMode} border-transparent`}>
-                    {album.date}
-                  </Badge>
-                  <h3 className="text-2xl font-serif font-bold tracking-tight">
-                    {album.title}
-                  </h3>
+                <div className="mb-6 flex justify-between items-start">
+                  <div>
+                    <Badge variant="outline" className={`mb-3 ${album.badgeMode} border-transparent shadow-sm`}>
+                      {album.date}
+                    </Badge>
+                    <h3 className="text-2xl font-serif font-bold tracking-tight">
+                      {album.title}
+                    </h3>
+                  </div>
                 </div>
 
-                <div className="space-y-3 mt-8">
+                <div className="space-y-3 mt-8 bg-black/5 dark:bg-white/10 p-5 rounded-xl backdrop-blur-sm">
                   <h4 className="text-xs uppercase tracking-widest font-bold opacity-70 mb-4">Tracklist</h4>
                   {album.tracks.map((track, i) => (
                     <div key={i} className="flex items-center justify-between group">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs opacity-50 w-4">{i + 1}</span>
+                        <span className="text-xs opacity-50 w-4 font-mono">{i + 1}</span>
                         <span className={`text-sm ${track.title ? 'font-bold' : 'font-medium opacity-90'}`}>
                           {track.name}
                         </span>
                       </div>
                       <div className="flex gap-2">
                         {track.title && (
-                          <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 bg-black/10 hover:bg-black/20 text-current border-0">
+                          <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 bg-black/10 hover:bg-black/20 dark:bg-white/20 dark:hover:bg-white/30 text-current border-0">
                             TITLE
                           </Badge>
                         )}
@@ -166,7 +230,7 @@ function Tooltip({ children, content }: { children: React.ReactNode, content: st
   return (
     <div className="relative group/tooltip flex items-center">
       {children}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-[10px] font-medium text-white bg-gray-900 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 text-[10px] font-medium text-white bg-gray-900 rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
         {content}
       </div>
     </div>
