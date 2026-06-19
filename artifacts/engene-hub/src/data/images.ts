@@ -28,21 +28,10 @@ export type MemberId =
   | "ni-ki";
 
 export interface MemberImage {
-  /** Stable lowercase slug matching the member data */
   id: MemberId;
-  /** Display name for alt text */
   name: string;
-  /**
-   * URL or imported asset path for the member's profile photo.
-   * Leave undefined until you have a real image.
-   */
   src?: string;
-  /** Alt text for the <img> element */
   alt: string;
-  /**
-   * When true the component renders the gradient placeholder even if `src` is set.
-   * Flip to false once the image is ready.
-   */
   placeholder: boolean;
 }
 
@@ -104,27 +93,18 @@ export type AlbumId =
   | "border-day-one"
   | "border-carnival"
   | "dimension-dilemma"
+  | "dimension-answer"
   | "manifesto-day-1"
   | "dark-blood"
   | "orange-blood"
-  | "romance-untold";
+  | "romance-untold"
+  | "sin-vanish";
 
 export interface AlbumImage {
-  /** Stable kebab-case slug */
   id: AlbumId;
-  /** Full album title for alt text */
   title: string;
-  /**
-   * URL or imported asset path for the album cover art.
-   * Leave undefined until you have a real image.
-   */
   src?: string;
-  /** Alt text for the <img> element */
   alt: string;
-  /**
-   * When true the component renders the gradient art panel even if `src` is set.
-   * Flip to false once the cover art is ready.
-   */
   placeholder: boolean;
 }
 
@@ -148,6 +128,13 @@ export const albumImages: Record<AlbumId, AlbumImage> = {
     title: "DIMENSION: DILEMMA",
     src: undefined,
     alt: "ENHYPEN DIMENSION: DILEMMA album cover",
+    placeholder: true,
+  },
+  "dimension-answer": {
+    id: "dimension-answer",
+    title: "DIMENSION: ANSWER",
+    src: undefined,
+    alt: "ENHYPEN DIMENSION: ANSWER album cover",
     placeholder: true,
   },
   "manifesto-day-1": {
@@ -178,29 +165,25 @@ export const albumImages: Record<AlbumId, AlbumImage> = {
     alt: "ENHYPEN ROMANCE : UNTOLD album cover",
     placeholder: true,
   },
+  "sin-vanish": {
+    id: "sin-vanish",
+    title: "SIN : VANISH",
+    src: undefined,
+    alt: "ENHYPEN SIN : VANISH album cover",
+    placeholder: true,
+  },
 };
 
 // ─── Helper utilities ─────────────────────────────────────────────────────────
 
-/**
- * Returns the MemberImage record for a given member ID.
- * Falls back gracefully when an unknown id is passed.
- */
 export function getMemberImage(id: MemberId): MemberImage {
   return memberImages[id];
 }
 
-/**
- * Returns the AlbumImage record for a given album ID.
- * Falls back gracefully when an unknown id is passed.
- */
 export function getAlbumImage(id: AlbumId): AlbumImage {
   return albumImages[id];
 }
 
-/**
- * Returns true when the entry has a real image ready to display.
- */
 export function hasImage(entry: MemberImage | AlbumImage): boolean {
   return !entry.placeholder && entry.src !== undefined;
 }
