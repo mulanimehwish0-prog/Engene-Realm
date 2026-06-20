@@ -59,7 +59,8 @@ export type AlbumId =
   | "romance-untold-daydream"
   | "memorabilia"
   | "desire-unleash"
-  | "sadame";
+  | "sadame"
+  | "sin-vanish";
 
 export interface AlbumImage {
   id: AlbumId;
@@ -82,6 +83,7 @@ export const albumImages: Record<AlbumId, AlbumImage> = {
   "memorabilia":              { id: "memorabilia",              title: "MEMORABILIA",                  src: undefined, alt: "ENHYPEN MEMORABILIA album cover",                  placeholder: true },
   "desire-unleash":           { id: "desire-unleash",           title: "DESIRE : UNLEASH",             src: undefined, alt: "ENHYPEN DESIRE : UNLEASH album cover",             placeholder: true },
   "sadame":                   { id: "sadame",                   title: "SADAME",                       src: undefined, alt: "ENHYPEN SADAME album cover",                       placeholder: true },
+  "sin-vanish":               { id: "sin-vanish",               title: "SIN : VANISH",                 src: undefined, alt: "ENHYPEN SIN : VANISH album cover",                 placeholder: true },
 };
 
 // ─── Helper utilities ─────────────────────────────────────────────────────────

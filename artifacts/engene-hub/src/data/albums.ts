@@ -226,7 +226,7 @@ export const albums: Album[] = [
     market: "Korean",
     titleTrack: "Brought the Boys Out",
     description:
-      "A story not yet written. Brought the Boys Out launched ENHYPEN's sunniest chapter — romantic, playful, full of summer nostalgia. Their warmest era, radiating the charm of an untold love story.",
+      "ENHYPEN's 2nd full album, released July 12, 2024. The group brought the heat back with their summer romance concept. A fresh chapter after the blood series, centered on love and warmth.",
     gradient: "from-rose-300 via-pink-200 to-orange-200",
     textMode: "text-rose-950",
     badgeMode: "bg-rose-700 text-white",
@@ -293,6 +293,25 @@ export const albums: Album[] = [
     dotColor: "bg-violet-600",
     tracks: [],
     tracksNote: "Tracklist details coming soon.",
+  },
+
+  {
+    title: "SIN : VANISH",
+    imageId: "sin-vanish",
+    date: "Jan 16, 2026",
+    type: "7th EP",
+    market: "Korean",
+    titleTrack: "Knife",
+    description:
+      "ENHYPEN's 7th EP, released January 16, 2026 through Belift Lab. Consists of 11 tracks, with lead single \"Knife\". Noted as the group's final release as a seven-piece ensemble.",
+    gradient: "from-zinc-900 via-slate-800 to-neutral-900",
+    textMode: "text-white",
+    badgeMode: "bg-zinc-700 text-white",
+    dotColor: "bg-zinc-400",
+    tracks: [
+      { name: "Knife", title: true },
+    ],
+    tracksNote: "11-track EP. Full tracklist details coming soon.",
   },
 
   // ── Japanese Releases ────────────────────────────────────────────────────────
