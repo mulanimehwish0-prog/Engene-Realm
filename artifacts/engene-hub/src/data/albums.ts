@@ -224,7 +224,7 @@ export const albums: Album[] = [
     date: "Jul 12, 2024",
     type: "2nd Full Album",
     market: "Korean",
-    titleTrack: "Brought the Boys Out",
+    titleTrack: "brought the heat back",
     description:
       "ENHYPEN's 2nd full album, released July 12, 2024. The group brought the heat back with their summer romance concept. A fresh chapter after the blood series, centered on love and warmth.",
     gradient: "from-rose-300 via-pink-200 to-orange-200",
@@ -232,7 +232,7 @@ export const albums: Album[] = [
     badgeMode: "bg-rose-700 text-white",
     dotColor: "bg-rose-500",
     tracks: [
-      { name: "Brought the Boys Out", title: true },
+      { name: "brought the heat back", title: true },
       { name: "XO (Only If You Say Yes)", favorite: true },
       { name: "Moonstruck" },
       { name: "Fatal Trouble" },
