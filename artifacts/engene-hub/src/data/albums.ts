@@ -56,7 +56,7 @@ export interface Album {
   tracksNote?: string;
 }
 
-// ─── Korean Releases ──────────────────────────────────────────────────────────
+// ─── Korean Discography ──────────────────────────────────────────────────────────
 
 export const albums: Album[] = [
   {
@@ -77,7 +77,7 @@ export const albums: Album[] = [
       { name: "Given-Taken", title: true },
       { name: "Let Me In (20 CUBE)", favorite: true },
       { name: "10 Months" },
-      { name: "Foreshadow" },
+      { name: "Flicker" },
       { name: "Outro: Cross the Line" },
     ],
   },
@@ -117,7 +117,7 @@ export const albums: Album[] = [
     badgeMode: "bg-blue-900 text-white",
     dotColor: "bg-blue-700",
     tracks: [
-      { name: "Intro: Cosmos" },
+      { name: "Intro: Whiteout" },
       { name: "Tamed-Dashed", title: true },
       { name: "Upper Side Dreamin'" },
       { name: "Just A Little Bit" },
@@ -141,7 +141,7 @@ export const albums: Album[] = [
     badgeMode: "bg-indigo-900 text-white",
     dotColor: "bg-indigo-600",
     tracks: [
-      { name: "Intro: Cosmos" },
+      { name: "Intro: Whiteout" },
       { name: "Tamed-Dashed" },
       { name: "Upper Side Dreamin'" },
       { name: "Just A Little Bit" },
@@ -173,6 +173,7 @@ export const albums: Album[] = [
       { name: "ParadoXXX Invasion" },
       { name: "TFW (That Feeling When)" },
       { name: "Shout Out", favorite: true },
+      { name: "Foreshadow" },
     ],
   },
   {
@@ -216,6 +217,7 @@ export const albums: Album[] = [
       { name: "Still Monster" },
       { name: "Blind" },
       { name: "Orange Flower (You Complete Me)", favorite: true },
+      { name: "Sweet Venom (English Version)" },
     ],
   },
   {
@@ -224,7 +226,7 @@ export const albums: Album[] = [
     date: "Jul 12, 2024",
     type: "2nd Full Album",
     market: "Korean",
-    titleTrack: "Brought the heat back",
+    titleTrack: "XO (Only If You Say Yes)",
     description:
       "ENHYPEN's 2nd full album, released July 12, 2024. The group brought the heat back with their summer romance concept. A fresh chapter after the blood series, centered on love and warmth.",
     gradient: "from-rose-300 via-pink-200 to-orange-200",
@@ -232,11 +234,16 @@ export const albums: Album[] = [
     badgeMode: "bg-rose-700 text-white",
     dotColor: "bg-rose-500",
     tracks: [
-      { name: "Brought the heat back", title: true },
-      { name: "XO (Only If You Say Yes)", favorite: true },
+      { name: "XO (Only If You Say Yes)", title: true },
+      { name: "Brought The Heat Back", favorite: true },
       { name: "Moonstruck" },
       { name: "Fatal Trouble" },
       { name: "Serenade (I'll Be There)" },
+      { name: "Your Eyes Only" },
+      { name: "Hundred Broken Hearts" },
+      { name: "Paranormal" },
+      { name: "Royalty" },
+      { name: "Highway 1009" },
     ],
   },
   {
@@ -253,46 +260,68 @@ export const albums: Album[] = [
     badgeMode: "bg-pink-700 text-white",
     dotColor: "bg-pink-400",
     tracks: [
-      { name: "Brought the heat back" },
-      { name: "XO (Only If You Say Yes)" },
+      { name: "Daydream" },
+      { name: "No Doubt", title: true },
+      { name: "XO (Only If You Say Yes)", title: true },
+      { name: "Brought The Heat Back", favorite: true },
       { name: "Moonstruck" },
       { name: "Fatal Trouble" },
       { name: "Serenade (I'll Be There)" },
-      { name: "No Doubt", title: true, favorite: true },
+      { name: "Your Eyes Only" },
+      { name: "Hundred Broken Hearts" },
+      { name: "Paranormal" },
+      { name: "Royalty" },
+      { name: "Highway 1009" },
     ],
     tracksNote: "Includes all ROMANCE : UNTOLD tracks plus new additions.",
   },
   {
     title: "MEMORABILIA",
     imageId: "memorabilia",
-    date: "2025",
-    type: "Mini Album",
+    date: "May 13, 2024",
+    type: "Special Album",
     market: "Korean",
-    titleTrack: "TBC",
+    titleTrack: "Fatal Trouble ",
     description:
-      "A new chapter in the ENHYPEN story. MEMORABILIA continues the group's evolution with a fresh concept, deepening their artistic identity and connection with Engenes worldwide.",
+    "DARK MOON SPECIAL ALBUM MEMORABILIA. A special chapter connected to the DARK MOON universe, exploring fate, memories, and the stories of its characters.",
     gradient: "from-teal-100 to-emerald-200",
     textMode: "text-teal-950",
     badgeMode: "bg-teal-800 text-white",
     dotColor: "bg-teal-600",
-    tracks: [],
-    tracksNote: "Tracklist details coming soon.",
+    tracks: [
+      { name: "One In A Billion", favorite: true },
+      { name: "Criminal Love", favorite: true },
+      { name: "Fatal Trouble", title: true, favorite: true },
+      { name: "Teeth" },
+      { name: "Lucifer" },
+      { name: "Scream" },
+    ],
+    tracksNote: "Tracklist updated",
   },
   {
     title: "DESIRE : UNLEASH",
     imageId: "desire-unleash",
-    date: "2025",
-    type: "Mini Album",
+    date: "Jun 5, 2025",
+    type: "6th Mini Album",
     market: "Korean",
-    titleTrack: "TBC",
+    titleTrack: "Bad Desire (With or Without You)",
     description:
-      "Desire, unleashed. ENHYPEN's latest Korean-market release explores themes of longing and release, pushing the boundaries of their sonic and visual identity further than ever before.",
+    "Desire, unleashed. ENHYPEN explores themes of temptation, longing, and transformation through a darker and intense concept.",
     gradient: "from-violet-200 to-purple-400",
     textMode: "text-violet-950",
     badgeMode: "bg-violet-800 text-white",
     dotColor: "bg-violet-600",
-    tracks: [],
-    tracksNote: "Tracklist details coming soon.",
+    tracks: [
+      { name: "Flashover" },
+      { name: "Bad Desire (With or Without You)", title: true, favorite: true },
+      { name: "Outside" },
+      { name: "Loose (Korean Version)" },
+      { name: "Helium" },
+      { name: "Too Close" },
+      { name: "Bad Desire (With or Without You) (English Version)" },
+      { name: "Loose" },
+        ],
+    tracksNote: "Includes all DESIRE : UNLEASH tracks",
   },
 
   {
@@ -303,15 +332,25 @@ export const albums: Album[] = [
     market: "Korean",
     titleTrack: "Knife",
     description:
-      "ENHYPEN's 7th EP, released January 16, 2026 through Belift Lab. Consists of 11 tracks, with lead single \"Knife\". Noted as the group's final release as a seven-piece ensemble.",
+      "ENHYPEN's 7th EP, released January 16, 2026 through Belift Lab. Consists of 11 tracks, with lead single \"Knife\". A significant chapter in ENHYPEN's story, representing the final OT7 era before the group's transition into a new chapter.",
     gradient: "from-zinc-900 via-slate-800 to-neutral-900",
     textMode: "text-white",
     badgeMode: "bg-zinc-700 text-white",
     dotColor: "bg-zinc-400",
     tracks: [
-      { name: "Knife", title: true },
+      { name: "The Beginning (사건의 발단)" },
+      { name: "No Way Back (feat. So!YoON!)" },
+      { name: "The Fugitives (도망자들)" },
+      { name: "Knife", title: true, favorite: true },
+      { name: "Stealer" },
+      { name: "The Voice (우리가 찾던 목소리)" },
+      { name: "Witnesses (목격자)" },
+      { name: "Big Girls Don't Cry", favorite: true },
+      { name: "Lost Island" },
+      { name: "Sleep Tight" },
+      { name: "The Beyond (사건의 너머)" },
     ],
-    tracksNote: "11-track EP. Full tracklist details coming soon.",
+    tracksNote: "A cinematic chapter exploring the group's darker storyline.", 
   },
 
   // ── Japanese Releases ────────────────────────────────────────────────────────
@@ -319,7 +358,7 @@ export const albums: Album[] = [
   {
     title: "SADAME",
     imageId: "sadame",
-    date: "2025",
+    date: "  Oct 26, 2022",
     type: "Japanese Release",
     market: "Japanese",
     titleTrack: "TBC",
@@ -331,5 +370,22 @@ export const albums: Album[] = [
     dotColor: "bg-neutral-600",
     tracks: [],
     tracksNote: "Tracklist details coming soon.",
+  },
+  // --------UPCOMING RELEASES------------
+  {
+    title: "SIN : BLISS",
+    imageId: "sin-bliss",
+    date: "Coming Soon",
+    type: "Upcoming Release",
+    market: "Korean",
+    titleTrack: "TBA",
+    description:
+      "An upcoming chapter in ENHYPEN's story. More details will be added when officially revealed.",
+    gradient: "from-indigo-200 to-purple-300",
+    textMode: "text-indigo-950",
+    badgeMode: "bg-indigo-700 text-white",
+    dotColor: "bg-indigo-500",
+    tracks: [],
+    tracksNote: "Tracklist and details will be updated after official release.",
   },
 ];

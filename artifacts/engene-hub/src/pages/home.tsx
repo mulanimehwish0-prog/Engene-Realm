@@ -2,65 +2,18 @@ import { FloatingParticles } from "@/components/FloatingParticles";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { ChevronRight, Music2, Sparkles, Megaphone, CalendarDays, Globe } from "lucide-react";
+import { ChevronRight, Music2, Sparkles, Megaphone, CalendarDays, type LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { getLatestUpdates, type UpdateCategory } from "@/data/updates";
 
-const latestUpdates = [
-  {
-    id: 1,
-    type: "Comeback",
-    date: "2024",
-    title: "ROMANCE : UNTOLD -daydream-",
-    description: "The repackage edition of their 2nd full album. ROMANCE : UNTOLD -daydream- expanded the romantic narrative with new tracks including No Doubt.",
-    icon: Music2,
-    borderColor: "border-l-pink-400",
-  },
-  {
-    id: 2,
-    type: "Release",
-    date: "2025",
-    title: "MEMORABILIA",
-    description: "ENHYPEN's newest Korean-market mini album. MEMORABILIA marks another chapter in their ever-evolving artistic journey, with a fresh concept and signature storytelling.",
-    icon: Music2,
-    borderColor: "border-l-teal-500",
-  },
-  {
-    id: 3,
-    type: "Release",
-    date: "2025",
-    title: "DESIRE : UNLEASH",
-    description: "ENHYPEN returns with DESIRE : UNLEASH, their latest release. A bold new era exploring themes of longing and release, pushing their sonic identity further than ever.",
-    icon: Music2,
-    borderColor: "border-l-violet-500",
-  },
-  {
-    id: 4,
-    type: "Japanese Release",
-    date: "2025",
-    title: "SADAME",
-    description: "ENHYPEN's Japanese release SADAME — meaning 'fate' or 'destiny' — continues their strong presence in the Japanese market with a dedicated Japanese-language production.",
-    icon: Sparkles,
-    borderColor: "border-l-amber-500",
-  },
-  {
-    id: 5,
-    type: "World Tour",
-    date: "2026",
-    title: "ENHYPEN World Tour 2026",
-    description: "ENHYPEN announces their 2026 world tour spanning Asia, North America, and Europe. Engenes around the world, get ready.",
-    icon: Globe,
-    borderColor: "border-l-blue-500",
-  },
-  {
-    id: 6,
-    type: "Milestone",
-    date: "Nov 2025",
-    title: "5th Debut Anniversary",
-    description: "ENHYPEN celebrated five years since debut in November 2025. From I-Land trainees to world-touring artists — a journey Engenes have shared every step of the way.",
-    icon: Megaphone,
-    borderColor: "border-l-rose-500",
-  },
-];
+const CATEGORY_STYLE: Record<UpdateCategory, { borderColor: string; Icon: LucideIcon }> = {
+  comebacks:     { borderColor: "border-l-pink-400",   Icon: Music2 },
+  performances:  { borderColor: "border-l-violet-500", Icon: Sparkles },
+  events:        { borderColor: "border-l-amber-500",  Icon: CalendarDays },
+  announcements: { borderColor: "border-l-blue-500",   Icon: Megaphone },
+};
+
+const latestUpdates = getLatestUpdates(6);
 
 export default function Home() {
   return (
@@ -74,40 +27,86 @@ export default function Home() {
 
         {/* ── Hero ────────────────────────────────────────────────── */}
         <motion.div
-          className="max-w-3xl mx-auto text-center space-y-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className="relative max-w-5xl mx-auto text-center"
         >
-          <Badge variant="secondary" className="px-4 py-1 text-sm rounded-full mb-4 bg-primary/10 text-primary hover:bg-primary/20 transition-colors border border-primary/20 glass">
-            For the fans, by the fans
-          </Badge>
 
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground leading-tight">
-            Welcome, Engene <span className="inline-block">💙</span>
-          </h1>
+          {/* image area */}
+          <div
+            className="relative h-[420px] rounded-3xl overflow-hidden"
+            style={{
+              backgroundImage: `url("https://www.rollingstone.com/wp-content/uploads/2026/01/enhyphen-knife-exclusive.jpg?w=1581&h=1054&crop=1")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
 
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto pt-4">
-            Step into our cozy corner. Formed on I-Land in 2020 under BELIFT LAB, ENHYPEN is known for their mesmerizing border and dark conceptual storytelling. This is a dedicated space to celebrate their journey, music, and the bond we share.
-          </p>
+            {/* bottom fade */}
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 py-6">
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">7 Members</Badge>
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">Since 2020</Badge>
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">12 Releases</Badge>
-            <Badge className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary border border-primary/20 hover:bg-primary/20">Active 2025 – 2026</Badge>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <Link href="/members" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-full px-8 shadow-sm hover:shadow-lg hover:-translate-y-0.5" data-testid="button-home-members">
+
+          {/* text starts after fade */}
+          <div className="relative -mt-20 z-10 space-y-6">
+
+            <Badge>
+              For the fans, by the fans
+            </Badge>
+
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground">
+              Welcome, Engene 💙
+            </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Step into our cozy corner. Formed on I-Land in 2020 under BELIFT LAB, ENHYPEN is known for their mesmerizing border and dark conceptual storytelling. This is a dedicated space to celebrate their journey, music, and the bond we share.
+            </p>
+
+          </div>
+
+        
+        {/* Stat badges */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            {[
+              { label: "7 Members", bg: "hsl(0, 0%, 0%)" },
+              { label: "Since 2020", bg: "hsl(0, 0%, 0%)" },
+              { label: "12 Releases", bg: "hsl(0, 0%, 0%)" },
+              { label: "2025–2026 Active", bg: "hsl(0, 0%, 0%)" },
+            ].map((s) => (
+              <span
+                key={s.label}
+                className="inline-flex items-center rounded-full text-white font-bold font-serif text-sm px-5 py-2 transition-transform hover:-translate-y-0.5"
+                style={{
+                  background: s.bg,
+                  border: "2.5px solid white",
+                  boxShadow: "2px 3px 0 rgba(0, 0, 128, 1)",
+                }}
+              >
+                {s.label}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link
+              href="/members"
+              className="inline-flex items-center gap-2 font-bold font-serif text-navy blue rounded-full px-9 py-3.5 transition-all hover:-translate-y-1"
+             
+              data-testid="button-home-members"
+            >
               Meet the Members
             </Link>
-            <Link href="/albums" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground h-11 rounded-full px-8 shadow-sm hover:shadow-lg hover:-translate-y-0.5" data-testid="button-home-albums">
+            <Link
+              href="/albums"
+              className="inline-flex items-center gap-2 font-bold font-serif rounded-full px-9 py-3.5 bg-navy blue transition-all hover:-translate-y-1"
+              
+              data-testid="button-home-albums"
+            >
               Full Discography
             </Link>
           </div>
         </motion.div>
-
+      
         {/* ── Latest Updates ───────────────────────────────────────── */}
         <motion.div
           className="mt-32 max-w-5xl mx-auto mb-20"
@@ -128,7 +127,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {latestUpdates.map((update, i) => {
-              const Icon = update.icon;
+              const { Icon, borderColor } = CATEGORY_STYLE[update.category];
               return (
                 <motion.div
                   key={update.id}
@@ -137,7 +136,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                 >
-                  <Card className={`glass dark:glass-dark overflow-hidden border-l-4 ${update.borderColor} hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full`}>
+                  <Card className={`glass dark:glass-dark overflow-hidden border-l-4 ${borderColor} hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full`}>
                     <CardContent className="p-5">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="p-1.5 rounded-lg bg-primary/10 shrink-0">
@@ -148,7 +147,7 @@ export default function Home() {
                         </Badge>
                         <span className="text-xs text-muted-foreground flex items-center gap-1 font-medium ml-auto shrink-0">
                           <CalendarDays className="w-3 h-3" />
-                          {update.date}
+                          {update.dateDisplay}
                         </span>
                       </div>
                       <h3 className="text-base font-bold font-serif mb-2 text-foreground leading-snug">{update.title}</h3>
@@ -216,7 +215,7 @@ export default function Home() {
                 <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(255,255,255,0.1)_10px,rgba(255,255,255,0.1)_20px)]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f2e] via-transparent to-transparent opacity-80" />
                 <h2 className="text-8xl md:text-9xl font-serif font-bold text-white/10 tracking-tighter rotate-[-10deg] scale-150 whitespace-nowrap select-none">DARK BLOOD</h2>
-                {/* Swap in album cover: <img src="…" alt="DARK BLOOD" className="w-full h-full object-cover absolute inset-0 mix-blend-overlay opacity-60" /> */}
+                { <img src="https://phinf.wevpstatic.net/MjAyMzA1MDhfOTIg/MDAxNjgzNTI0NTg1OTgz.rkNCyANNYxPXF7OwLRylX-NUb2Ca4TSih3228oUkbdsg.EsglN5KF6nsujVELoHR8WNMm6i4VJ5gSgj0KflCSQv0g.JPEG/06aff225-5d2f-42c3-b36b-016995a00b5c.jpeg?type=w1414" alt=".." className="w-full h-full object-cover absolute inset-  "/>}
               </div>
             </div>
           </Card>

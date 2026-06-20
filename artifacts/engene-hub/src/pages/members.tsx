@@ -9,25 +9,25 @@ const members = [
     name: "Jungwon",
     imageId: "jungwon" as MemberId,
     role: "Leader, Vocalist, Dancer",
-    birthDate: "Jan 9, 2004",
+    birthDate: "Feb 9, 2004",
     nationality: "Korean",
     color: "border-indigo-400",
     gradient: "from-blue-400 to-indigo-500",
     glowColor: "rgba(99,102,241,0.35)",
-    facts: ["Loves cats", "Enjoys drawing", "Known for his unique vocal tone"],
+    facts: ["Loves cats", "Loves Jay Hyung ", "Known for his unique vocal tone"],
     vibe: "Warm earnest leader",
-    quote: "Let's do our best without any regrets."
+    quote: "STRAWBERRY WITH CHOCOLATES !!!."
   },
   {
     name: "Heeseung",
     imageId: "heeseung" as MemberId,
-    role: "Vocalist, Dancer, Center",
+    role: "Vocalist, Dancer, Center, Soloist",
     birthDate: "Oct 15, 2001",
     nationality: "Korean",
     color: "border-purple-400",
     gradient: "from-purple-400 to-violet-600",
     glowColor: "rgba(139,92,246,0.35)",
-    facts: ["Perfectionist", "Plays guitar", "Trained for 3+ years"],
+    facts: ["Fake Maknae", "Loves to flirt with ENGENES", "Eldest Member of the group"],
     vibe: "Intense stage presence, soft off-stage",
     quote: "I want to be someone who gives positive energy."
   },
@@ -40,7 +40,7 @@ const members = [
     color: "border-orange-400",
     gradient: "from-orange-400 to-amber-500",
     glowColor: "rgba(249,115,22,0.35)",
-    facts: ["Fluent in 3 languages", "Loves fashion", "Enjoys cooking for members"],
+    facts: ["Fluent in 3 languages", "Loves fashion, F1 and Guitars", "Enjoys cooking for members"],
     vibe: "Outgoing and reliable rock",
     quote: "Resentment, anger, shame."
   },
@@ -55,7 +55,7 @@ const members = [
     glowColor: "rgba(234,179,8,0.35)",
     facts: ["Sunshine energy", "Dog lover (Layla)", "Played soccer"],
     vibe: "Golden retriever energy",
-    quote: "Just keep running."
+    quote: "EVERYTHING YOU EAT TURNS INTO POOP  "
   },
   {
     name: "Sunghoon",
@@ -68,7 +68,7 @@ const members = [
     glowColor: "rgba(6,182,212,0.35)",
     facts: ["Former competitive figure skater", "Nicknamed 'Ice Prince'", "Quiet but playful"],
     vibe: "Charismatic on stage, elegant",
-    quote: "I will show you a better me."
+    quote: "I'M HANDSOME...I LIKE...SAMSUNG..."
   },
   {
     name: "Sunoo",
