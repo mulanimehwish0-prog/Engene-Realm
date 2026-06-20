@@ -8,6 +8,7 @@ const members = [
   {
     name: "Jungwon",
     imageId: "jungwon" as MemberId,
+    enchin: "https://i.pinimg.com/736x/3d/ce/58/3dce58507118234c65746e1f240b4ce1.jpg",
     role: "Leader, Vocalist, Dancer",
     birthDate: "Feb 9, 2004",
     nationality: "Korean",
@@ -16,11 +17,12 @@ const members = [
     glowColor: "rgba(99,102,241,0.35)",
     facts: ["Loves cats", "Loves Jay Hyung ", "Known for his unique vocal tone"],
     vibe: "Warm earnest leader",
-    quote: "STRAWBERRY WITH CHOCOLATES !!!."
+    quote: "WE LIVE BECAUSE ENGENES EXIST."
   },
   {
     name: "Heeseung",
     imageId: "heeseung" as MemberId,
+    enchin: "https://i.pinimg.com/736x/be/cf/c1/becfc19b26797c32b965c2190419252f.jpg",
     role: "Vocalist, Dancer, Center, Soloist",
     birthDate: "Oct 15, 2001",
     nationality: "Korean",
@@ -29,11 +31,12 @@ const members = [
     glowColor: "rgba(139,92,246,0.35)",
     facts: ["Fake Maknae", "Loves to flirt with ENGENES", "Eldest Member of the group"],
     vibe: "Intense stage presence, soft off-stage",
-    quote: "I want to be someone who gives positive energy."
+    quote: "BIG GIRLS DON'T CRY, ENGENES !!"
   },
   {
     name: "Jay",
     imageId: "jay" as MemberId,
+    enchin: "https://i.pinimg.com/736x/05/3d/37/053d3759dd7bde0cda8aac1b734d0bfa.jpg",
     role: "Main Rapper, Lead Dancer, Vocalist",
     birthDate: "Apr 20, 2002",
     nationality: "Korean-American",
@@ -42,11 +45,12 @@ const members = [
     glowColor: "rgba(249,115,22,0.35)",
     facts: ["Fluent in 3 languages", "Loves fashion, F1 and Guitars", "Enjoys cooking for members"],
     vibe: "Outgoing and reliable rock",
-    quote: "Resentment, anger, shame."
+    quote: "Light is always by your side in any situations. Always try to find it. If you still can't see it, I'll be the part of your light."
   },
   {
     name: "Jake",
     imageId: "jake" as MemberId,
+    enchin: "https://i.pinimg.com/736x/0b/f2/cc/0bf2cc6b8889819f18b6522eaa19ff7e.jpg",
     role: "Rapper, Vocalist",
     birthDate: "Nov 15, 2002",
     nationality: "Australian",
@@ -55,11 +59,12 @@ const members = [
     glowColor: "rgba(234,179,8,0.35)",
     facts: ["Sunshine energy", "Dog lover (Layla)", "Played soccer"],
     vibe: "Golden retriever energy",
-    quote: "EVERYTHING YOU EAT TURNS INTO POOP  "
+    quote: "ITS OKAY TO NOT TO BE OKAY SOMETIMES"
   },
   {
     name: "Sunghoon",
     imageId: "sunghoon" as MemberId,
+    enchin: "https://i.pinimg.com/736x/e1/83/c8/e183c8201a59e331907f3a6182759d07.jpg",
     role: "Vocalist, Dancer, Visual",
     birthDate: "Dec 8, 2002",
     nationality: "Korean",
@@ -68,11 +73,12 @@ const members = [
     glowColor: "rgba(6,182,212,0.35)",
     facts: ["Former competitive figure skater", "Nicknamed 'Ice Prince'", "Quiet but playful"],
     vibe: "Charismatic on stage, elegant",
-    quote: "I'M HANDSOME...I LIKE...SAMSUNG..."
+    quote: "And Most Of All I Think ENGENE Is The Cutest And Lovliest When They Look At Me And Are Happy To See Us. "
   },
   {
     name: "Sunoo",
     imageId: "sunoo" as MemberId,
+    enchin: "https://i.pinimg.com/736x/02/71/1f/02711fcf3a8961b8f8d80947be2ae21e.jpg",
     role: "Vocalist",
     birthDate: "Jun 24, 2003",
     nationality: "Korean",
@@ -81,11 +87,12 @@ const members = [
     glowColor: "rgba(244,63,94,0.35)",
     facts: ["Infectious smile", "Loves mint chocolate", "Takes great selfies"],
     vibe: "Cheerful mood-maker",
-    quote: "Always smile!"
+    quote: "Don't keep listening to what other people say, instead believe in yourself."
   },
   {
     name: "Ni-ki",
     imageId: "ni-ki" as MemberId,
+    enchin: "https://i.pinimg.com/736x/2b/23/3f/2b233f9859d98f28bc90c65a5f1c8325.jpg",
     role: "Main Dancer, Vocalist, Maknae",
     birthDate: "Dec 9, 2005",
     nationality: "Japanese",
@@ -94,7 +101,7 @@ const members = [
     glowColor: "rgba(100,116,139,0.35)",
     facts: ["Prodigious dancer", "Loves drawing", "Grew up dancing in studios"],
     vibe: "Powerhouse performer",
-    quote: "I want to be an artist who touches people's hearts."
+    quote: "I BELIEVE IN YOU !!."
   }
 ];
 
@@ -158,6 +165,8 @@ export default function Members() {
                     </div>
                   )}
 
+            
+                  
                   {/* Role badge row — always visible */}
                   <div className="absolute bottom-3 left-3 z-20 flex gap-1.5 flex-wrap max-w-[85%]">
                     {member.role.split(", ").map((r) => (
@@ -184,12 +193,27 @@ export default function Members() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
+                <CardContent className="relative space-y-6">
                   <div>
                     <h4 className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-2">Vibe</h4>
                     <p className="text-sm text-foreground/80">{member.vibe}</p>
                   </div>
-
+                  {/* Enchin mascot */}
+                  {member.enchin && (
+                    <img
+                      src={member.enchin}
+                      alt={`${member.name} Enchin`}
+                      className="
+                        absolute
+                        right-4
+                        top-30
+                        w-16
+                        z-10
+                    
+                        pointer-events-none
+                      "
+                    />
+                  )}
                   <div>
                     <h4 className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-2">Fun Facts</h4>
                     <ul className="text-sm space-y-2">

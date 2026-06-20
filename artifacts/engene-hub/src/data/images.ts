@@ -31,18 +31,19 @@ export interface MemberImage {
   id: MemberId;
   name: string;
   src?: string;
+  enchin?: string;
   alt: string;
   placeholder: boolean;
 }
 
 export const memberImages: Record<MemberId, MemberImage> = {
-  jungwon:   { id: "jungwon",   name: "Jungwon",   src: "https://suaragong.com/wp-content/uploads/2025/03/Yang-Jungwoon.webp", alt: "Yang Jungwon — ENHYPEN leader",                          placeholder: false },
-  heeseung:  { id: "heeseung",  name: "Heeseung",  src: "https://assets.teenvogue.com/photos/69aff74dece51f0f059d051e/16:9/w_1600,c_limit/2257528816", alt: "Lee Heeseung — ENHYPEN vocalist and dancer",             placeholder: false },
-  jay:       { id: "jay",       name: "Jay",       src: "https://nolae.eu/cdn/shop/articles/jay-enhypen-profil-662196.jpg?v=1720447969&width=1920", alt: "Park Jongseong (Jay) — ENHYPEN rapper and vocalist",     placeholder: false },
-  jake:      { id: "jake",      name: "Jake",      src: "https://pbs.twimg.com/media/G8_spDabsAAy2lz.jpg", alt: "Sim Jaeyun (Jake) — ENHYPEN rapper and vocalist",       placeholder: false },
-  sunghoon:  { id: "sunghoon",  name: "Sunghoon",  src: "https://www.musicmundial.com/en/wp-content/uploads/2025/12/ENHYPENs-Sunghoon-visuals-spark-debate-and-divide-fans-online.jpg", alt: "Park Sunghoon — ENHYPEN vocalist and visual",           placeholder: false },
-  sunoo:     { id: "sunoo",     name: "Sunoo",     src: "https://media.assettype.com/tribune%2F2024-12-18%2Fuvocyjpq%2Fviberimage2024-12-1812-11-40-202.jpg?w=480&auto=format%2Ccompress", alt: "Kim Sunoo — ENHYPEN vocalist",                          placeholder: false },
-  "ni-ki":   { id: "ni-ki",    name: "Ni-ki",     src:"https://staticg.sportskeeda.com/editor/2026/02/877e2-17698923773893-1920.jpg?w=640", alt: "Nishimura Riki (Ni-ki) — ENHYPEN main dancer",          placeholder: false },
+  jungwon:   { id: "jungwon",   name: "Jungwon",   src: "https://suaragong.com/wp-content/uploads/2025/03/Yang-Jungwoon.webp", enchin:undefined, alt: "Yang Jungwon — ENHYPEN leader",                          placeholder: false },
+  heeseung:  { id: "heeseung",  name: "Heeseung",  src: "https://assets.teenvogue.com/photos/69aff74dece51f0f059d051e/16:9/w_1600,c_limit/2257528816", enchin:undefined, alt: "Lee Heeseung — ENHYPEN vocalist and dancer",             placeholder: false },
+  jay:       { id: "jay",       name: "Jay",       src: "https://nolae.eu/cdn/shop/articles/jay-enhypen-profil-662196.jpg?v=1720447969&width=1920", enchin:undefined, alt: "Park Jongseong (Jay) — ENHYPEN rapper and vocalist",     placeholder: false },
+  jake:      { id: "jake",      name: "Jake",      src: "https://pbs.twimg.com/media/G8_spDabsAAy2lz.jpg",enchin:undefined, alt: "Sim Jaeyun (Jake) — ENHYPEN rapper and vocalist",       placeholder: false },
+  sunghoon:  { id: "sunghoon",  name: "Sunghoon",  src: "https://www.musicmundial.com/en/wp-content/uploads/2025/12/ENHYPENs-Sunghoon-visuals-spark-debate-and-divide-fans-online.jpg", enchin:undefined, alt: "Park Sunghoon — ENHYPEN vocalist and visual",           placeholder: false },
+  sunoo:     { id: "sunoo",     name: "Sunoo",     src: "https://media.assettype.com/tribune%2F2024-12-18%2Fuvocyjpq%2Fviberimage2024-12-1812-11-40-202.jpg?w=480&auto=format%2Ccompress", enchin:undefined, alt: "Kim Sunoo — ENHYPEN vocalist",                          placeholder: false },
+  "ni-ki":   { id: "ni-ki",    name: "Ni-ki",     src:"https://staticg.sportskeeda.com/editor/2026/02/877e2-17698923773893-1920.jpg?w=640",enchin:"https://cdn.shopify.com/s/files/1/0673/0707/7942/files/puni.png?v=1779293692", alt: "Nishimura Riki (Ni-ki) — ENHYPEN main dancer",          placeholder: false },
 };
 
 // ─── Album / Era Images ───────────────────────────────────────────────────────
