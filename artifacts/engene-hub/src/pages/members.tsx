@@ -205,9 +205,9 @@ export default function Members() {
                       alt={`${member.name} Enchin`}
                       className="
                         absolute
-                        right-4
-                        top-30
-                        w-16
+                        right-2
+                        top-25
+                        w-25
                         z-10
                     
                         pointer-events-none
